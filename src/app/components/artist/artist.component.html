@@ -1,0 +1,26 @@
+Artists
+<p>
+  <input #artistNameSearch>
+  <button (click)="onClickSearchArtist(artistNameSearch.value)">Search Artist</button>
+</p>
+<div *ngIf="artist">
+  {{artist?.name}} :  <a href={{artist?.url}}>Link to LastFM</a>
+  <div *ngIf="artist.bio">
+    Biography
+    <div>
+      Summary
+      <p>
+      {{artist?.bio.summary}}
+      </p>
+    </div>
+    <div>
+      Content
+      <p>
+      {{artist?.bio.content}}
+        </p>
+    </div>
+  </div>
+</div>
+
+
+
