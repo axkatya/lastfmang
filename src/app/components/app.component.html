@@ -1,7 +1,9 @@
 <h1>{{title}}</h1>
-<nav>
-  <a class="nav__item" routerLink="/albums">Albums</a>
-  <a class="nav__item" routerLink="/artists">Artists</a>
+<nav class="tab-list">
+  
+  <a class="tab-list-item tab-list-active" routerLink="/albums" routerLinkActive="tab-list-active">Albums</a>
+  <a class="tab-list-item" routerLink="/artists" routerLinkActive="tab-list-active">Artists</a>
+
 </nav>
 <router-outlet></router-outlet>
 
