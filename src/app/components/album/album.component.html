@@ -1,6 +1,6 @@
 Albums
 <p>
-  <input #albumNameSearch>
+  <input #albumNameSearch placeholder="enter album name">
   <button (click)="onClickSearchAlbum(albumNameSearch.value)">Search Album</button>
 </p>
 <div *ngIf="albums">
