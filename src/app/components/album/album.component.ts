@@ -18,7 +18,6 @@ export class AlbumComponent implements OnInit {
 
   onClickSearchAlbum(albumNameSearch: string) {
     this.albumService.searchAlbum(albumNameSearch).subscribe(result => {
-
       this.albums = result;
     });
   }

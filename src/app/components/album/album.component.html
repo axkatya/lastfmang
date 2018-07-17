@@ -3,13 +3,7 @@ Albums
   <input #albumNameSearch placeholder="enter album name">
   <button (click)="onClickSearchAlbum(albumNameSearch.value)">Search Album</button>
 </p>
-<div *ngIf="albums">
-  <ul>
-    <li *ngFor="let album of albums">
-      
-      {{album.name}}: <a [routerLink]="['/artists', album.artist]" >{{album.artist}} </a> - <a href={{album.url}}>Link to LastFM</a>
-    </li>
-  </ul>
-</div>
+<app-album-list [albums]="albums"></app-album-list>
+
 
 
