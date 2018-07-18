@@ -1,18 +1,30 @@
-<div *ngIf="artist">
-  {{artist?.name}} :  <a href={{artist?.url}}>Link to LastFM</a>
-  <div *ngIf="artist.bio">
-    Biography
-    <div>
-      Summary
-      <p>
-        {{artist?.bio.summary}}
-      </p>
-    </div>
-    <div>
-      Content
-      <p>
-        {{artist?.bio.content}}
-      </p>
+<div class="container__card" *ngIf="artist">
+
+  <div class="container__itemname">
+    {{artist?.name}}
+  </div>
+
+  <div class="container__itemimage" *ngIf="artist.image">
+    <img src="{{ artist?.image[0]['#text']}}" />
+  </div>
+
+  <div class="container__iteminfo">
+    <a href={{artist?.url}}>Link to LastFM</a>
+
+    <div *ngIf="artist.bio">
+      Biography
+      <div>
+        Summary
+        <p>
+          {{artist?.bio.summary}}
+        </p>
+      </div>
+      <div>
+        Content
+        <p>
+          {{artist?.bio.content}}
+        </p>
+      </div>
     </div>
   </div>
 </div>

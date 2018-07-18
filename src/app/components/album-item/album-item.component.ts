@@ -8,9 +8,15 @@ import { Album } from '../../models/album';
 })
 export class AlbumItemComponent implements OnInit {
   @Input() album: Album;
+  largeImages: any[];
+  largeImage: any;
+
   constructor() { }
 
   ngOnInit() {
+    this.largeImages = this.album.image
+      .filter((img: any) => img['size'] === 'large');
+    this.largeImage = this.largeImages[0];
   }
 
 }

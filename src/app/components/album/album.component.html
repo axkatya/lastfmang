@@ -1,8 +1,11 @@
-Albums
-<p>
-  <input #albumNameSearch placeholder="enter album name">
-  <button (click)="onClickSearchAlbum(albumNameSearch.value)">Search Album</button>
-</p>
+<div  class="item__search">
+  Albums
+  <p>
+    <input #albumNameSearch placeholder="enter album name">
+    <button (click)="onClickSearchAlbum(albumNameSearch.value)">Search Album</button>
+  </p>
+</div>
+
 <app-album-list [albums]="albums"></app-album-list>
 
 

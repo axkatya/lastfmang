@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Artist } from '../../models/artist';
 
 @Component({
@@ -6,12 +6,13 @@ import { Artist } from '../../models/artist';
   templateUrl: './artist-item.component.html',
   styleUrls: ['./artist-item.component.css']
 })
-export class ArtistItemComponent implements OnInit {
-  @Input() artist: Artist;
+export class ArtistItemComponent {
+  @Input('artist') artist: Artist;
+  largeImages: any[];
+  largeImage: any;
 
-  constructor() { }
+  constructor() {
 
-  ngOnInit() {
   }
 
 }

@@ -1,1 +1,12 @@
-{{album.name}}: <a [routerLink]="['/artists', album.artist]">{{album.artist}} </a> - <a href={{album.url}}>Link to LastFM</a>
+<div class="container__card">
+  <div class="container__itemname">
+    {{album.name}}
+  </div>
+  <div class="container__itemimage">
+    <img src="{{largeImage['#text']}}" />
+  </div>
+  <div class="container__iteminfo">
+    <a [routerLink]="['/artists', album.artist]">{{album.artist}} </a>
+    <a href={{album.url}}>Link to LastFM</a>
+  </div>
+</div>
