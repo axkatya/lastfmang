@@ -20,7 +20,8 @@
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "web.config"
             ],
             "styles": [
               "src/styles.css"
@@ -94,11 +95,6 @@
           }
         }
       }
-    },
-
-    "apps": {
-      "projectType": "application",
-      "root": "src"
     },
 
         "lastfmang-e2e": {
