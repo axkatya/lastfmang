@@ -14,7 +14,7 @@ import { AlbumService } from './services/album.service';
 import { ArtistService } from './services/artist.service';
 
 import { AppRoutingModule } from './/app-routing.module';
-
+import { RouterLinkDirectiveStub } from './testing/router-link-directive-stub';
 
 
 
@@ -25,7 +25,8 @@ import { AppRoutingModule } from './/app-routing.module';
     ArtistComponent,
     ArtistItemComponent,
     AlbumListComponent,
-    AlbumItemComponent
+    AlbumItemComponent,
+    RouterLinkDirectiveStub
   ],
   imports: [
     BrowserModule,

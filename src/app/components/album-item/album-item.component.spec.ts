@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { RouterTestingModule } from '@angular/router/testing'
 import { AlbumItemComponent } from './album-item.component';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('AlbumItemComponent', () => {
   let component: AlbumItemComponent;
@@ -8,9 +9,11 @@ describe('AlbumItemComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AlbumItemComponent ]
+      imports: [RouterTestingModule],
+      declarations: [AlbumItemComponent],
+      schemas: [NO_ERRORS_SCHEMA]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

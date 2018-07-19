@@ -1,20 +1,27 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LastfmComponent } from './lastfm.component';
+import { AlbumComponent } from './album.component';
+import Albumservice = require("../../services/album.service");
+import AlbumService = Albumservice.AlbumService;
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
-describe('LastfmComponent', () => {
-  let component: LastfmComponent;
-  let fixture: ComponentFixture<LastfmComponent>;
+describe('AlbumComponent', () => {
+  let component: AlbumComponent;
+  let fixture: ComponentFixture<AlbumComponent>;
+
+  let albumServiceStub: Partial<AlbumService> = {};
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LastfmComponent ]
+      declarations: [AlbumComponent],
+      providers: [{ provide: AlbumService, useValue: albumServiceStub }],
+      schemas: [NO_ERRORS_SCHEMA]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LastfmComponent);
+    fixture = TestBed.createComponent(AlbumComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
