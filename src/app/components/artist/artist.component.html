@@ -3,7 +3,7 @@
   Artists
   <p>
     <input #artistNameSearch placeholder="enter artist name">
-    <button (click)="onClickSearchArtist(artistNameSearch.value)">Search Artist</button>
+    <button class="btn" (click)="onClickSearchArtist(artistNameSearch.value)">Search Artist</button>
   </p>
 </div>
 <app-artist-item [artist]="artist"></app-artist-item>

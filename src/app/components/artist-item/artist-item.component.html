@@ -1,9 +1,12 @@
 <div class="container__card" *ngIf="artist">
+
+  <div class="card__itemimage" *ngIf="artist.image">
+    <img src="{{ artist?.image[2]['#text']}}"/>
+  </div>
+
   <div class="card__item">
 
-    <div class="card__itemimage" *ngIf="artist.image">
-      <img src="{{ artist?.image[2]['#text']}}" />
-    </div>
+ 
 
     <div class="card__itemname">
       {{artist?.name}}

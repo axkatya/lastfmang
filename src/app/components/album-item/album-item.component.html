@@ -1,15 +1,17 @@
 <div class="container__card">
+  <div class="card__itemimage">
+    <img src="{{largeImage['#text']}}" />
+  </div>
   <div class="card__item">
-   
-    <div class="card__itemimage">
-      <img src="{{largeImage['#text']}}" />
-    </div>
+
     <div class="card__itemname">
       {{album.name}}
     </div>
     <div class="card__iteminfo">
       <a [routerLink]="['/artists', album.artist]">{{album.artist}} </a>
-      <a href={{album.url}}>Link to LastFM</a>
+      <p>
+        <a href={{album.url}}>Link to LastFM</a>
+      </p>
     </div>
   </div>
 </div>
