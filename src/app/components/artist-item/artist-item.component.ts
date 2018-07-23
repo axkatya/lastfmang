@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnChanges } from '@angular/core';
 import { Artist } from '../../models/artist';
 
 @Component({
@@ -6,8 +6,8 @@ import { Artist } from '../../models/artist';
   templateUrl: './artist-item.component.html',
   styleUrls: ['./artist-item.component.css']
 })
-export class ArtistItemComponent {
-  @Input('artist') artist: Artist;
+export class ArtistItemComponent implements OnChanges {
+  @Input() artist: Artist;
   largeImages: any[];
   largeImage: any;
 
@@ -15,4 +15,11 @@ export class ArtistItemComponent {
 
   }
 
+  ngOnChanges() {
+    if (this.artist != null && this.artist != undefined) {
+      this.largeImages = this.artist.image
+        .filter((img: any) => img['size'] === 'large');
+      this.largeImage = this.largeImages[0];
+    }
+  }
 }

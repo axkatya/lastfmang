@@ -14,9 +14,10 @@ export class AlbumItemComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.largeImages = this.album.image
-      .filter((img: any) => img['size'] === 'large');
-    this.largeImage = this.largeImages[0];
+    if (this.album != null && this.album != undefined) {
+      this.largeImages = this.album.image
+        .filter((img: any) => img['size'] === 'large');
+      this.largeImage = this.largeImages[0];
+    }
   }
-
 }

@@ -1,19 +1,16 @@
 <div class="container__card" *ngIf="artist">
 
-  <div class="card__itemimage" *ngIf="artist.image">
-    <img src="{{ artist?.image[2]['#text']}}"/>
+  <div class="card__itemimage" *ngIf="largeImage">
+    <img src="{{ largeImage['#text']}}"/>
   </div>
 
   <div class="card__item">
-
- 
-
     <div class="card__itemname">
       {{artist?.name}}
     </div>
 
     <div class="card__iteminfo">
-      <a href={{artist?.url}}>Link to LastFM</a>
+      <a href={{artist.url}}>Link to LastFM</a>
 
       <div *ngIf="artist.bio">
         <p class="card__itemsubtitle">
@@ -24,7 +21,7 @@
             Summary
           </p>
           <p>
-            {{artist?.bio.summary}}
+            {{artist.bio?.summary}}
           </p>
         </div>
       </div>
@@ -33,7 +30,7 @@
           Content
         </p>
         <p>
-          {{artist?.bio.content}}
+          {{artist.bio?.content}}
         </p>
       </div>
     </div>
