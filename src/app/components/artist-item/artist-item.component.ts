@@ -1,5 +1,8 @@
 import { Component, Input, OnChanges } from '@angular/core';
 import { Artist } from '../../models/artist';
+import { Album } from '../../models/album';
+import { Track } from '../../models/track';
+
 
 @Component({
   selector: 'app-artist-item',
@@ -7,7 +10,9 @@ import { Artist } from '../../models/artist';
   styleUrls: ['./artist-item.component.css']
 })
 export class ArtistItemComponent implements OnChanges {
-  @Input() artist: Artist;
+  @Input('artist') artist: Artist;
+  @Input('topTracks') topTracks: Track[];
+  @Input('topAlbums') topAlbums: Album[];
   largeImages: any[];
   largeImage: any;
 

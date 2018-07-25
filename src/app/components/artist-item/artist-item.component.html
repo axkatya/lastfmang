@@ -1,12 +1,12 @@
-<div class="container__card" *ngIf="artist">
+<div *ngIf="artist">
 
-  <div class="card__itemimage" *ngIf="largeImage">
-    <img src="{{ largeImage['#text']}}"/>
+  <div *ngIf="largeImage">
+    <img src="{{ largeImage['#text']}}" />
   </div>
 
-  <div class="card__item">
+  <div>
     <div class="card__itemname">
-      {{artist?.name}}
+      {{artist.name}}
     </div>
 
     <div class="card__iteminfo">
@@ -34,6 +34,40 @@
         </p>
       </div>
     </div>
+
+    <div *ngIf="topTracks">
+      <p class="card__itemsubtitle">
+        Top Tracks
+      </p>
+      <div *ngFor="let track of topTracks">
+        <a href="{{track.url}}">{{track.name}}</a>
+        {{track.listeners}} listeners
+      </div>
+    </div>
+
+    <div *ngIf="topAlbums">
+      <p class="card__itemsubtitle">
+        Top Albums
+      </p>
+      <div class="container__list">
+        <div *ngFor="let album of topAlbums">
+          <div class="container__card">
+            <img class="card__itemimage" src="{{album.image[2]['#text']}}" />
+            <p class="card__itemname">
+
+              {{album.name}}
+            </p>
+            <p *ngIf="album.playcount">
+              {{album.playcount}} listeners
+            </p>
+            <a href="{{album.url}}">Link to Last FM</a>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>
 

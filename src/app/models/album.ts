@@ -3,4 +3,5 @@ export class Album {
   public artist: string;
   public url: string;
   public image: any[];
+  public playcount: number;
 }

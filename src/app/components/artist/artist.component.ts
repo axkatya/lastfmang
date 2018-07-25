@@ -2,6 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ArtistService } from '../../services/artist.service';
 import { Artist } from '../../models/artist';
+import { Track } from '../../models/track';
+import { Album } from '../../models/album';
 
 @Component({
   selector: 'app-artist',
@@ -9,9 +11,12 @@ import { Artist } from '../../models/artist';
   styleUrls: ['./artist.component.css']
 })
 export class ArtistComponent implements OnInit {
-  artistName: string;
 
+  artistName: string;
   artist: Artist;
+  topTracks: Track[];
+  topAlbums: Album[];
+
   constructor(private artistService: ArtistService,
     private route: ActivatedRoute) {
    
@@ -30,6 +35,14 @@ export class ArtistComponent implements OnInit {
   onClickSearchArtist(artistNameSearch: string) {
     this.artistService.searchArtist(artistNameSearch).subscribe(result => {
       this.artist = result;
+    });
+
+    this.artistService.searchArtistTopTracks(artistNameSearch).subscribe(result => {
+      this.topTracks = result;
+    });
+
+    this.artistService.searchArtistTopAlbums(artistNameSearch).subscribe(result => {
+      this.topAlbums = result;
     });
   }
 }

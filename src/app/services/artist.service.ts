@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { Http } from '@angular/http';
 import { Artist } from '../models/artist';
+import { Album } from '../models/album';
+import { Track } from '../models/track';
 import { environment } from '../../environments/environment';
 
 
@@ -17,4 +19,19 @@ export class ArtistService {
         '&api_key=' + environment.apiKey + '&format=json')
       .pipe(map(result => result.json().artist as Artist));
   }
+
+  searchArtistTopTracks(artistNameSearch: string) {
+    return this.http.get(environment.endPoint + '?method=artist.gettoptracks&artist=' +
+        artistNameSearch +
+        '&api_key=' + environment.apiKey + '&format=json')
+      .pipe(map(result => result.json().toptracks.track as Track[]));
+  }
+
+  searchArtistTopAlbums(artistNameSearch: string) {
+    return this.http.get(environment.endPoint + '?method=artist.gettopalbums&artist=' +
+        artistNameSearch +
+        '&api_key=' + environment.apiKey + '&format=json')
+      .pipe(map(result => result.json().topalbums.album as Album[]));
+  }
+
 }

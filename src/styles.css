@@ -47,10 +47,10 @@ body {
 }
 
 .card__itemsubtitle {
-  /*font-size: 13px;
+  font-size: 13px;
   margin-top: 5px;
   font-weight: 400;
-  padding: 0;*/
+  padding: 0;
 }
 
 .card__itemimage {
@@ -62,9 +62,9 @@ body {
 }
 
 .card__iteminfo {
-  /*font-size: 13px;
+  font-size: 13px;
   margin-top: 5px;
-  padding: 0;*/
+  padding: 0;
 }
 
 .tablist {
