@@ -26,22 +26,24 @@ export class ArtistComponent implements OnInit {
 
   ngOnInit() {
     if (this.artistName !== null && this.artistName !== undefined && this.artistName !== "") {
-      this.artistService.searchArtist(this.artistName).subscribe(result => {
-        this.artist = result;
-      });
+      this.getAllInfo(this.artistName);
     }
   }
 
   onClickSearchArtist(artistNameSearch: string) {
-    this.artistService.searchArtist(artistNameSearch).subscribe(result => {
+    this.getAllInfo(artistNameSearch);
+  }
+
+  getAllInfo(artistName: string) {
+    this.artistService.searchArtist(artistName).subscribe(result => {
       this.artist = result;
     });
 
-    this.artistService.searchArtistTopTracks(artistNameSearch).subscribe(result => {
+    this.artistService.searchArtistTopTracks(artistName).subscribe(result => {
       this.topTracks = result;
     });
 
-    this.artistService.searchArtistTopAlbums(artistNameSearch).subscribe(result => {
+    this.artistService.searchArtistTopAlbums(artistName).subscribe(result => {
       this.topAlbums = result;
     });
   }

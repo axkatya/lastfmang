@@ -20,4 +20,6 @@ export class AlbumItemComponent implements OnInit {
       this.largeImage = this.largeImages[0];
     }
   }
+
+  isString(val) { return typeof val === 'string'; }
 }

@@ -15,6 +15,8 @@ import { ArtistService } from './services/artist.service';
 
 import { AppRoutingModule } from './/app-routing.module';
 import { RouterLinkDirectiveStub } from './testing/router-link-directive-stub';
+import { TrackListComponent } from './components/track-list/track-list.component';
+import { TrackItemComponent } from './components/track-item/track-item.component';
 
 
 
@@ -26,7 +28,9 @@ import { RouterLinkDirectiveStub } from './testing/router-link-directive-stub';
     ArtistItemComponent,
     AlbumListComponent,
     AlbumItemComponent,
-    RouterLinkDirectiveStub
+    RouterLinkDirectiveStub,
+    TrackListComponent,
+    TrackItemComponent
   ],
   imports: [
     BrowserModule,
